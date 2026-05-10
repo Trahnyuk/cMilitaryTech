@@ -3,7 +3,6 @@
 
 namespace cMiltech {
 
-    // Numeric values must match the simulation.txt output spec (HW2, §5).
     enum class DroneState : int {
         Stopped      = 0,
         Accelerating = 1,

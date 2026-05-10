@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "Simulator.h"
 #include "BallisticCalculator.h"
 
@@ -8,7 +9,7 @@
 namespace cMiltech {
 
     namespace {
-        constexpr float PI     = 3.14159265358979323846f;
+        constexpr float PI     = static_cast<float>(M_PI);
         constexpr float TWO_PI = 2.0f * PI;
 
         struct DropGeometry {
@@ -206,10 +207,7 @@ namespace cMiltech {
                                           int targetIndex,
                                           float dt) const {
         constexpr int maxLocalSteps = 5000;
-        // Must be >= attackSpeed*dt (one cruise step = 2 m here) so the drone
-        // cannot jump over the sphere in a single tick and return infinity.
-        // hitRadius (3 m) is safe; the resulting time under-estimate is at most
-        // hitRadius/attackSpeed ≈ 0.15 s, which is acceptable for lead prediction.
+
         const float threshold = m_input.getHitRadius();
 
         for (int i = 0; i < maxLocalSteps; ++i) {

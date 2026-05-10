@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include "Drone.h"
 
 #include <algorithm>
@@ -6,7 +7,7 @@
 namespace cMiltech {
 
     namespace {
-        constexpr float PI     = 3.14159265358979323846f;
+        constexpr float PI     = static_cast<float>(M_PI);
         constexpr float TWO_PI = 2.0f * PI;
     }
 
@@ -157,13 +158,7 @@ namespace cMiltech {
 
                 deltaPath = m_speed * dt;
 
-                // Safety fix: intermediate waypoint legs are allowed to move,
-                // but they must not trigger the final event.
-                //
-                // Also detect whether this discrete simulation step crosses the
-                // movement goal. The previous version checked only the pre-move
-                // distance, so with dt=0.1 and speed=10 it could jump over a
-                // small trigger radius and report the event late.
+              
                 const Point2D oldPos = m_pos;
                 const Point2D newPos{
                     m_pos.x + std::cos(m_dir) * deltaPath,

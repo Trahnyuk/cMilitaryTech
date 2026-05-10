@@ -6,9 +6,7 @@
 
 namespace cMiltech {
 
-    // Pure ballistic core (HW1 §5.1–5.3). The fire-point geometry that used to
-    // live here in HW1 has moved to Simulator, because in HW2 the target
-    // position changes every step.
+ 
     class BallisticCalculator {
     public:
         // Solve the cubic + power series for the given drop conditions.

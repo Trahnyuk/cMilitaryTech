@@ -33,12 +33,6 @@ namespace cMiltech {
         bool        hasDrop() const noexcept { return m_hasDrop; }
         const DropEvent& drop() const noexcept { return m_drop; }
 
-        // Output format (HW2 §8):
-        //   Line 1: N
-        //   Line 2: x0 y0 x1 y1 ...
-        //   Line 3: directions
-        //   Line 4: states (0..4)
-        //   Line 5: target indices
         void writeToFile(const std::string& path) const;
 
     private:

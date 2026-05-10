@@ -5,9 +5,6 @@
 
 namespace cMiltech {
 
-    // Parses the HW2 input.txt format:
-    //   xd yd zd initialDir attackSpeed accelerationPath ammo_name
-    //   arrayTimeStep simTimeStep hitRadius angularSpeed turnThreshold
     class MissionInput {
     public:
         explicit MissionInput(const std::string& filePath);

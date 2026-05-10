@@ -8,8 +8,6 @@
 
 namespace cMiltech {
 
-    // Stores 5 moving targets, each with 60 sampled (x,y) positions.
-    // The array is cyclic in time — index 60 wraps to index 0 (HW2 §4).
     class TargetDatabase {
     public:
         static constexpr int kNumTargets = 5;

@@ -25,9 +25,7 @@ namespace cMiltech {
         struct TargetSolution {
             int     targetIndex{-1};
 
-            // movementGoal is the point passed to Drone::step this tick.
-            // It is not always the final firePoint; when an intermediate leg
-            // is required, movementGoal is the intermediatePoint and allowDrop=false.
+          
             Point2D movementGoal{};
             Point2D firePoint{};
             Point2D intermediatePoint{};
